@@ -30,11 +30,128 @@ html{
     margin-left: 2px;
 }
 
+.personPhoto{
+  width: 146px;
+  height: 146px;
+  float: left;
+  margin-top: 36px;
+  margin-left: 26px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.personName{
+    font-family: 'Signika', sans-serif;
+    font-size: 30px;
+    float: right;
+    margin-top: 77px;
+    margin-right: 32px;
+    color: #34495E;
+}
+
+.personLoc{
+    font-size: 17px;
+    margin-top: 3px;
+    margin-left: 2px;
+    font-family: 'Lato', sans-serif;
+}
+
 .info{
     float: right;
     width: 825px;
     height: 295px;
     margin-right: 2px;
+}
+
+.personDetail{
+    padding-left: 1px;
+    padding-top: 35px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.personDetailBlock{
+    width: 108px;
+    height: 78px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: white;
+}
+
+.personDetailBlock1{
+    background-color: #25C4EB;
+    float: left;
+}
+
+.personICO{
+    float: left;
+    width: 32px;
+    height: 32px;
+    background: #25C4EB url("img/smallICO.png") no-repeat;
+}
+
+.circleICO{
+    margin-left: 37px;
+    margin-top: 11px;
+    background-position: 0 0;
+}
+
+.ans{
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 43px;
+}
+
+    
+.flagICO{
+    margin-left: 36px;
+    margin-top: 9px;
+    background-position: -32px 0;
+}
+
+.fran{
+    position: absolute;
+    margin-left: 14px;
+    margin-top: 43px;
+}
+
+.carICO{
+    margin-left: 38px;
+    margin-top: 11px;
+    background-position: -64px 0;
+}
+
+.permis{
+    position: absolute;
+    margin-left: 23px;
+    margin-top: 43px;
+}
+
+.cigaretteICO{
+    margin-left: 39px;
+    margin-top: 11px;
+    background-position: -96px 0;
+}
+
+.non{
+    position: absolute;
+    margin-left: 38px;
+    margin-top: 43px;
+}
+
+.personDetailBlock2{
+    background-color: #F85153;
+    float: left;
+}
+
+.personDetailBlock3{
+    background-color: #21CDC1;
+    float: left;
+}
+
+.personDetailBlock4{
+    background-color: #34495E;
+    float: left;
 }
 
 .column1{
