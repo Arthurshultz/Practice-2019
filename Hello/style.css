@@ -1,5 +1,7 @@
 html{
     background-color: #EAEDF1;
+    font-family: 'Lato', sans-serif;
+    /* font-family: 'Signika', sans-serif; */
     /* font-size: 15px; */
     /* line-height: 1.5; */
     
@@ -23,6 +25,8 @@ html{
     border-radius: 3px;
 }
 
+
+/* хедер левый блок */
 .person{
     float: left;
     width: 434px;
@@ -56,13 +60,6 @@ html{
     font-family: 'Lato', sans-serif;
 }
 
-.info{
-    float: right;
-    width: 825px;
-    height: 295px;
-    margin-right: 2px;
-}
-
 .personDetail{
     padding-left: 1px;
     padding-top: 35px;
@@ -73,7 +70,6 @@ html{
 .personDetailBlock{
     width: 108px;
     height: 78px;
-    font-family: 'Lato', sans-serif;
     font-size: 14px;
     color: white;
 }
@@ -102,7 +98,6 @@ html{
     margin-top: 43px;
 }
 
-    
 .flagICO{
     margin-left: 36px;
     margin-top: 9px;
@@ -154,6 +149,103 @@ html{
     float: left;
 }
 
+/* хедер правый блок */
+.info{
+    float: right;
+    width: 825px;
+    height: 295px;
+    margin-right: 2px;
+    color: #34495E;
+}
+
+.infoHeader{
+    font-family: 'Signika', sans-serif;
+    font-size: 38px;
+    padding-top: 43px;
+    padding-left: 30px;
+}
+
+.infoText{
+    font-size: 17px;
+    width: 400px;
+    min-height: 120px;
+    float: left;
+    padding-top: 10px;
+    padding-left: 33px;
+    word-spacing: 5px;
+    line-height: 30px;
+}
+
+.infoTextSpan{
+   color: #20A8C9;
+}
+
+.infoWeb{
+    width: 300px;
+    min-height: 120px;
+    float: right;
+    padding-top: 16px;
+    padding-right: 12px;
+    font-family: 'Signika', sans-serif;
+    font-size: 23px;
+}
+
+.infoSite{
+    padding-top: 16px;
+    letter-spacing: 2px;
+    color: #F85153;
+}
+
+.hr1{
+    width: 273px;
+    margin: 31px 1px;
+	padding: 0px;
+	height: 0;
+	border: none;
+	border-top: 1px solid #788695;
+}
+
+.infoSocial{
+    padding-top: 151px;
+    margin-left: 24px;
+}
+
+.social{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: white url("img/smallICO.png") no-repeat;
+}
+
+.social-tw{
+    background-position: 0px -32px;
+    margin-right: 37px;
+}
+
+.social-2{
+    background-position: -32px -32px;
+    margin-right: 42px;
+}
+
+.social-3{
+    background-position: -64px -32px;
+    margin-right: 40px;
+}
+
+.social-inst{
+    background-position: -96px -32px;
+    margin-right: 39px;
+}
+
+.social-5{
+    background-position: -128px -32px;
+    margin-right: 35px;
+}
+.social-6{
+    background-position: -160px -32px;
+}
+
+/* левая колонка */
 .column1{
     float: left;
     width: 635px;
@@ -161,12 +253,158 @@ html{
     margin-left: 2px;
 }
 
+/* первый блок */
 .block1{
     width: 634px;
     height: 339px;
     margin-top: 33px;
 }
 
+.block1Title{
+    padding-top: 28px;
+    padding-left: 25px;
+}
+
+.block1TitlePhrase1{
+    color: #34495E;
+    font-family: 'Signika', sans-serif;
+    font-size: 25px;
+}
+
+.block1TitlePhrase2{
+    margin-left: 11px;
+    color: #9EA7B4;
+    font-size: 17px;
+    word-spacing: 2px;
+}
+
+.block1TitlePhrase3{
+    color: #34495E;
+    font-family: 'Signika', sans-serif;
+    padding-left: 22px;
+    padding-top: 1px;
+    font-size: 21px;
+    color: #18BCA6;
+}
+
+
+.checkMark{
+    width: 18px;
+    height: 18px;
+    background: white url("img/smallICO.png") no-repeat;
+    background-position: 0px -64px;
+}
+
+.locaMark{
+    width: 32px;
+    height: 32px;
+    background: white url("img/smallICO.png") no-repeat;
+    background-position: -128px 0px;
+}
+
+.reloadIco{
+    width: 32px;
+    height: 32px;
+    background: white url("img/smallICO.png") no-repeat;
+    background-position: -160px 0px;
+}
+
+.btn{
+    width: 217px;
+    height: 29px;
+    background-color: #25C4EB;
+    border-radius: 3px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.blockSite{
+    text-decoration: none;
+    font-family: 'Signika', sans-serif;
+    font-size: 17px;
+    color: white;
+}
+
+.checkMark1{
+    float: left;
+    margin-left: 28px;
+    margin-top: 31px;
+}
+
+.checkMarkString1{
+    float: right;
+    margin-right: 52px;
+    margin-top: 31px;
+}
+
+.checkMark2{
+    float: left;
+    margin-left: 28px;
+    margin-top: 17px;
+}
+
+.checkMarkString2{
+    float: right;
+    margin-right: 51px;
+    margin-top: 15px;
+}
+
+.checkMark3{
+    float: left;
+    margin-left: 28px;
+    margin-top: 14px;
+}
+
+.checkMarkString3{
+    float: right;
+    margin-right: 128px;
+    margin-top: 15px;
+}
+
+.checkMark4{
+    float: left;
+    margin-left: 28px;
+    margin-top: 15px;
+}
+
+.checkMarkString4{
+    float: right;
+    margin-right: 107px;
+    margin-top: 15px;
+}
+
+.locaMark1{
+    float: left;
+    margin-left: 17px;
+    margin-top: 46px;
+}
+
+.locaName1{
+    float: left;
+    margin-top: 49px;
+    color: #9EA7B4;
+}
+
+.reloadIco1{
+    float: left;
+    margin-left: 43px;
+    margin-top: 44px;
+}
+
+.block1date{
+    float: left;
+    margin-top: 49px;
+    color: #9EA7B4;
+}
+
+
+.btn1{
+    float: left;
+    margin-top: 41px;
+    margin-left: 74px;
+}
+
+/* второй блок */
 .block2{
     width: 634px;
     height: 322px;
