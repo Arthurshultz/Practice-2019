@@ -21,7 +21,6 @@ html{
     border-radius: 3px;
 }
 
-
 /* хедер левый блок */
 .person{
     float: left;
@@ -237,6 +236,7 @@ html{
     background-position: -128px -32px;
     margin-right: 35px;
 }
+
 .social-6{
     background-position: -160px -32px;
 }
@@ -301,6 +301,38 @@ html{
 
 .blockSiteStyle2{
     font-size: 15px;
+}
+
+/* звезды */
+.star-rating{
+	font-size: 0;
+}
+.star-rating__wrap{
+	display: inline-block;
+    font-size: 13px;
+}
+.star-rating__wrap:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+.star-rating__ico{
+	float: right;
+	padding-left: 3px;
+	cursor: pointer;
+	color: #B7BBC2;
+}
+.star-rating__ico:last-child{
+	padding-left: 0;
+}
+.star-rating__input{
+	display: none;
+}
+.star-rating__ico:hover:before,
+.star-rating__ico:hover ~ .star-rating__ico:before,
+.star-rating__input:checked ~ .star-rating__ico:before
+{
+	content: "\f005";
 }
 
 /* левая колонка */
@@ -417,7 +449,6 @@ html{
     color: #9EA7B4;
 }
 
-
 .btn1{
     float: left;
     margin-top: 41px;
@@ -425,7 +456,6 @@ html{
 }
 
 /* второй блок */
-
 .block2{
     width: 634px;
     height: 322px;
@@ -481,7 +511,6 @@ html{
     float: left;
     margin-top: 11px;
     margin-left: 9px;
-
 }
 
 .checkMark7{
@@ -533,13 +562,11 @@ html{
     color: #9EA7B4;
 }
 
-
 .btn2{
     float: left;
     margin-top: 39px;
     margin-left: 86px;
 }
-
 
 /* третий блок */
 .block3{
@@ -669,7 +696,6 @@ html{
     margin-left: 50px;
 }
 
-
 /* timeline */
 .timeLine{
     float: left;
@@ -752,16 +778,14 @@ html{
     position:absolute;
     z-index: 1;
     background-color: #DBE1E8;
-
 }
 
 .bottomTableData{
     color: white;
     text-align: center;
-    margin-top: 5px;
-    font-size: 20px;
+    margin-top: 3px;
+    font-size: 22px;
 }
-
 
 /* вторая колонка */
 .column2{
@@ -966,6 +990,12 @@ html{
     font-size: 13px;
 }
 
+.star-rating1{
+    float: left;
+    margin-left: 209px;
+    margin-top: 19px;
+}
+
 /* восьмой блок */
 .block8{
     width: 626px;
@@ -1023,6 +1053,12 @@ html{
     color: #34495E;
     margin-top: 14px;
     font-size: 13px;
+}
+
+.star-rating2{
+    float: left;
+    margin-left: 209px;
+    margin-top: 17px;
 }
 
 /* девятый блок */
@@ -1119,9 +1155,9 @@ html{
     background: #DBE1E8;
     border-radius: 5px;
     position: relative;
-  }
+}
   
-  .barfiller .fill {
+.barfiller .fill {
     border-radius: 5px;
     display: block;
     position: relative;
@@ -1129,11 +1165,11 @@ html{
     height: 100%;
     background: #333;
     z-index: 1;
-  }
+}
   
-  .barfiller .tipWrap { display: none; }
+.barfiller .tipWrap { display: none; }
   
-  .barfiller .tip {
+.barfiller .tip {
     border-radius: 5px;
     margin-top: -25px;
     padding: 3px 9px;
@@ -1144,9 +1180,9 @@ html{
     position: absolute;
     z-index: 2;
     background: #333;
-  }
+}
   
-  .barfiller .tip:after {
+.barfiller .tip:after {
     border: solid;
     border-color: rgba(0,0,0,.8) transparent;
     border-width: 3px 3px 0 3px;
@@ -1156,7 +1192,7 @@ html{
     left: 17px;
     top: 100%;
     z-index: 9
-  }
+}
 
 .barDescr1{
     margin-top: 44px;
@@ -1218,6 +1254,33 @@ html{
 #bar8{
     margin-left: 48px;
 }
-/* font-family: 'Lato', sans-serif;
-font-family: 'Signika', sans-serif;
-font-family: 'Signika Negative', sans-serif; */
+
+.footer{
+    clear: both; 
+}
+
+.quotes{
+    float: left;
+    color: #CED4DD;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 115px;
+    padding-left: 375px;
+    padding-top: 21px;
+}
+
+.footerPhrase{
+    float: left;
+    color: #35495E;
+    font-size: 18px;
+    padding-top: 53px;
+    padding-left: 13px;
+}
+
+.quotes2{
+    float: left;
+    color: #CED4DD;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 115px;
+    padding-left: 12px;
+    padding-top: 22px;
+}
