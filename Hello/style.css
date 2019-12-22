@@ -1,10 +1,6 @@
 html{
     background-color: #EAEDF1;
     font-family: 'Lato', sans-serif;
-    /* font-family: 'Signika', sans-serif; */
-    /* font-size: 15px; */
-    /* line-height: 1.5; */
-    
 }
 
 .container{
@@ -245,6 +241,68 @@ html{
     background-position: -160px -32px;
 }
 
+/* мишура */
+.overflow{
+    overflow:hidden;
+}
+
+.checkMark{
+    width: 18px;
+    height: 18px;
+    background: white url("img/smallICO.png") no-repeat;
+    background-position: 0px -64px;
+}
+
+.locaMark{
+    width: 32px;
+    height: 32px;
+    background: white url("img/smallICO.png") no-repeat;
+    background-position: -128px 0px;
+}
+
+.locaMarkStyle2{
+    background-position: -192px 0px;
+}
+
+.reloadIco{
+    width: 32px;
+    height: 32px;
+    background: white url("img/smallICO.png") no-repeat;
+    background-position: -160px 0px;
+}
+
+.reloadIcoStyle2{
+    background-position: -224px 0px;
+}
+
+.btn{
+    width: 217px;
+    height: 29px;
+    background-color: #25C4EB;
+    border-radius: 3px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.btnStyle2{
+    background-color: #B0BBCA;
+}
+
+.btnStyle3{
+    background-color: #21CDC1;
+}
+
+.blockSite{
+    text-decoration: none;
+    font-family: 'Signika', sans-serif;
+    font-size: 17px;
+    color: white;
+}
+
+.blockSiteStyle2{
+    font-size: 15px;
+}
+
 /* левая колонка */
 .column1{
     float: left;
@@ -285,44 +343,6 @@ html{
     padding-top: 1px;
     font-size: 21px;
     color: #18BCA6;
-}
-
-
-.checkMark{
-    width: 18px;
-    height: 18px;
-    background: white url("img/smallICO.png") no-repeat;
-    background-position: 0px -64px;
-}
-
-.locaMark{
-    width: 32px;
-    height: 32px;
-    background: white url("img/smallICO.png") no-repeat;
-    background-position: -128px 0px;
-}
-
-.reloadIco{
-    width: 32px;
-    height: 32px;
-    background: white url("img/smallICO.png") no-repeat;
-    background-position: -160px 0px;
-}
-
-.btn{
-    width: 217px;
-    height: 29px;
-    background-color: #25C4EB;
-    border-radius: 3px;
-    padding-top: 10px;
-    text-align: center;
-}
-
-.blockSite{
-    text-decoration: none;
-    font-family: 'Signika', sans-serif;
-    font-size: 17px;
-    color: white;
 }
 
 .checkMark1{
@@ -405,24 +425,252 @@ html{
 }
 
 /* второй блок */
+
 .block2{
     width: 634px;
     height: 322px;
     margin-top: 33px;
 }
 
+.block2Title{
+    padding-top: 27px;
+    padding-left: 24px;
+}
+
+.block2TitlePhrase1{
+    color: #34495E;
+    font-family: 'Signika', sans-serif;
+    font-size: 25px;
+}
+
+.block2TitlePhrase2{
+    margin-left: 11px;
+    color: #9EA7B4;
+    font-size: 17px;
+    word-spacing: 2px;
+}
+
+.block2TitlePhrase3{
+    color: #34495E;
+    font-family: 'Signika', sans-serif;
+    padding-left: 22px;
+    padding-top: 1px;
+    font-size: 21px;
+    color: #18BCA6;
+}
+
+.checkMark5{
+    float: left;
+    margin-left: 28px;
+    margin-top: 22px;
+}
+
+.checkMarkString5{
+    float: left;
+    margin-top: 17px;
+    margin-left: 9px;
+}
+
+.checkMark6{
+    float: left;
+    margin-left: 28px;
+    margin-top: 14px;
+}
+
+.checkMarkString6{
+    float: left;
+    margin-top: 11px;
+    margin-left: 9px;
+
+}
+
+.checkMark7{
+    float: left;
+    margin-left: 28px;
+    margin-top: 14px;
+}
+
+.checkMarkString7{
+    float: left;
+    margin-top: 12px;
+    margin-left: 9px;
+}
+
+.checkMark8{
+    float: left;
+    margin-left: 28px;
+    margin-top: 15px;
+}
+
+.checkMarkString8{
+    float: left;
+    margin-top: 14px;
+    margin-left: 9px;
+}
+
+.locaMark2{
+    float: left;
+    margin-left: 18px;
+    margin-top: 42px;
+}
+
+.locaName2{
+    float: left;
+    margin-top: 48px;
+    color: #9EA7B4;
+}
+
+.reloadIco2{
+    float: left;
+    margin-left: 36px;
+    margin-top: 44px;
+}
+
+.block2date{
+    float: left;
+    margin-top: 49px;
+    margin-left: 9px;
+    color: #9EA7B4;
+}
+
+
+.btn2{
+    float: left;
+    margin-top: 39px;
+    margin-left: 86px;
+}
+
+
+/* третий блок */
 .block3{
     width: 634px;
     height: 169px;
+    margin-top: 34px;
+}
+
+.block3Title{
+    padding-top: 28px;
+    padding-left: 23px;
+}
+
+.block3TitlePhrase1{
+    color: #34495E;
+    font-family: 'Signika', sans-serif;
+    font-size: 25px;
+}
+
+.block3TitlePhrase2{
+    margin-left: 6px;
+    color: #9EA7B4;
+    font-size: 17px;
+    word-spacing: 2px;
+}
+
+.block3TitlePhrase3{
+    color: #34495E;
+    font-family: 'Signika', sans-serif;
+    padding-left: 22px;
+    padding-top: 1px;
+    font-size: 21px;
+    color: #18BCA6;
+}
+
+.locaMark3{
+    float: left;
+    margin-left: 17px;
+    margin-top: 26px;
+}
+
+.locaName3{
+    float: left;
+    color: #9EA7B4;
     margin-top: 33px;
 }
 
+.reloadIco3{
+    float: left;
+    margin-left: 42px;
+    margin-top: 28px;
+}
+
+.block3date{
+    float: left;
+    color: #9EA7B4;
+    margin-top: 33px;
+}
+
+.btn3{
+    float: left;
+    margin-top: 23px;
+    margin-left: 69px;
+}
+
+/* четвертый блок */
 .block4{
     width: 634px;
     height: 169px;
-    margin-top: 33px;
+    margin-top: 32px;
 }
 
+.block4Title{
+    padding-top: 28px;
+    padding-left: 23px;
+}
+
+.block4TitlePhrase1{
+    color: #34495E;
+    font-family: 'Signika', sans-serif;
+    font-size: 25px;
+}
+
+.block4TitlePhrase2{
+    margin-left: 6px;
+    color: #9EA7B4;
+    font-size: 17px;
+    word-spacing: 2px;
+}
+
+.block4TitlePhrase3{
+    color: #34495E;
+    font-family: 'Signika', sans-serif;
+    padding-left: 22px;
+    padding-top: 1px;
+    font-size: 21px;
+    color: #18BCA6;
+}
+
+.locaMark4{
+    float: left;
+    margin-left: 17px;
+    margin-top: 26px;
+}
+
+.locaName4{
+    float: left;
+    color: #9EA7B4;
+    margin-top: 32px;
+}
+
+.reloadIco4{
+    float: left;
+    margin-left: 65px;
+    margin-top: 27px;
+}
+
+.block4date{
+    float: left;
+    color: #9EA7B4;
+    margin-top: 32px;
+}
+
+.btn4{
+    float: left;
+    margin-top: 21px;
+    margin-left: 50px;
+}
+
+
+/* timeline */
 .timeLine{
     float: left;
     width: 72px;
@@ -504,43 +752,280 @@ html{
     position:absolute;
     z-index: 1;
     background-color: #DBE1E8;
+
 }
 
+.bottomTableData{
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+
+/* вторая колонка */
 .column2{
     float: right;
     width: 626px;
     margin-top: 4px;
 }
 
+/* пятый блок */
 .block5{
     width: 626px;
     height: 170px;
     margin-top: 33px;
 }
 
+.block5Title{
+    padding-top: 28px;
+    padding-left: 23px;
+}
+
+.block5TitlePhrase1{
+    color: #34495E;
+    font-family: 'Signika', sans-serif;
+    font-size: 23px;
+}
+
+.block5TitlePhrase2{
+    margin-left: 8px;
+    color: #9EA7B4;
+    font-size: 15px;
+    word-spacing: 2px;
+}
+
+.block5TitlePhrase3{
+    color: #34495E;
+    font-family: 'Signika', sans-serif;
+    padding-left: 22px;
+    padding-top: 2px;
+    font-size: 18px;
+    color: #18B9D7;
+}
+
+.locaMark5{
+    float: left;
+    margin-left: 14px;
+    margin-top: 29px;
+}
+
+.locaName5{
+    float: left;
+    color: #34495E;
+    margin-top: 40px;
+    font-size: 12px;
+}
+
+.reloadIco5{
+    float: left;
+    margin-left: 59px;
+    margin-top: 32px;
+}
+
+.block5date{
+    float: left;
+    color: #34495E;
+    margin-top: 40px;
+    font-size: 13px;
+}
+
+.btn5{
+    float: left;
+    margin-top: 28px;
+    margin-left: 83px;
+}
+
+/* шестой блок */
 .block6{
     width: 626px;
     height: 170px;
     margin-top: 32px;
 }
 
+.block6Title{
+    padding-top: 29px;
+    padding-left: 23px;
+}
+
+.block6TitlePhrase1{
+    color: #34495E;
+    font-family: 'Signika', sans-serif;
+    font-size: 23px;
+}
+
+.block6TitlePhrase2{
+    margin-left: 8px;
+    color: #9EA7B4;
+    font-size: 15px;
+    word-spacing: 2px;
+}
+
+.block6TitlePhrase3{
+    font-family: 'Signika', sans-serif;
+    padding-left: 22px;
+    padding-top: 2px;
+    font-size: 18px;
+    color: #18B9D7;
+}
+
+.locaMark6{
+    float: left;
+    margin-left: 14px;
+    margin-top: 31px;
+}
+
+.locaName6{
+    float: left;
+    color: #34495E;
+    margin-top: 42px;
+    font-size: 12px;
+}
+
+.reloadIco6{
+    float: left;
+    margin-left: 59px;
+    margin-top: 33px;
+}
+
+.block6date{
+    float: left;
+    color: #34495E;
+    margin-top: 41px;
+    font-size: 13px;
+}
+
+.btn6{
+    float: left;
+    margin-top: 28px;
+    margin-left: 75px;
+}
+
+/* --//-- */
 .hr2{
     border-top: 3px dotted #C5CCD6;
     margin-top: 34px;
 }
 
+/* седьмой блок */
 .block7{
     width: 626px;
     height: 128px;
     margin-top: 31px;
 }
 
+.block7Title{
+    padding-top: 29px;
+    padding-left: 23px;
+}
+
+.block7TitlePhrase1{
+    color: #34495E;
+    font-family: 'Signika', sans-serif;
+    font-size: 23px;
+}
+
+.block7TitlePhrase2{
+    margin-left: 8px;
+    color: #9EA7B4;
+    font-size: 15px;
+    word-spacing: 2px;
+}
+
+.block7TitlePhrase3{
+    color: #18BCA6;
+    font-family: 'Signika', sans-serif;
+    padding-left: 22px;
+    padding-top: 2px;
+    font-size: 18px;
+}
+
+.locaMark7{
+    float: left;
+    margin-left: 14px;
+    margin-top: 6px;
+}
+
+.locaName7{
+    float: left;
+    color: #34495E;
+    margin-top: 16px;
+    font-size: 12px;
+}
+
+.reloadIco7{
+    float: left;
+    margin-left: 60px;
+    margin-top: 8px;
+}
+
+.block7date{
+    float: left;
+    color: #34495E;
+    margin-top: 16px;
+    font-size: 13px;
+}
+
+/* восьмой блок */
 .block8{
     width: 626px;
     height: 130px;
     margin-top: 32px;
 }
 
+.block8Title{
+    padding-top: 29px;
+    padding-left: 23px;
+}
+
+.block8TitlePhrase1{
+    color: #34495E;
+    font-family: 'Signika', sans-serif;
+    font-size: 23px;
+}
+
+.block8TitlePhrase2{
+    margin-left: 8px;
+    color: #9EA7B4;
+    font-size: 15px;
+    word-spacing: 2px;
+}
+
+.block8TitlePhrase3{
+    color: #18BCA6;
+    font-family: 'Signika', sans-serif;
+    padding-left: 22px;
+    padding-top: 2px;
+    font-size: 18px;
+}
+
+.locaMark8{
+    float: left;
+    margin-left: 14px;
+    margin-top: 4px;
+}
+
+.locaName8{
+    float: left;
+    color: #34495E;
+    margin-top: 16px;
+    font-size: 12px;
+}
+
+.reloadIco8{
+    float: left;
+    margin-left: 41px;
+    margin-top: 7px;
+}
+
+.block8date{
+    float: left;
+    color: #34495E;
+    margin-top: 14px;
+    font-size: 13px;
+}
+
+/* девятый блок */
 .block9{
     width: 626px;
     height: 401px;
@@ -548,6 +1033,191 @@ html{
     background-color: white; 
 }
 
+.hobbies{
+    padding-top: 16px;
+    padding-left: 19px;
+}
+
+.hobbiesICO{
+    display: inline-block;
+    width: 78px;
+    height: 78px;
+    background: white url("img/bigICO.png") no-repeat;
+}
+
+.web{
+    background-position: 0 0;
+    margin-right: 21px;
+}
+
+.mov{
+    background-position: -78px 0;
+    margin-right: 22px;
+}
+
+.aud{
+    background-position: -156px 0;
+    margin-right: 21px;
+}
+
+.fas{
+    background-position: 0 -78px;
+    margin-right: 22px;
+}
+
+.foo{
+    background-position: -78px -78px;
+    margin-right: 22px;
+}
+
+.fly{
+    background-position: -156px -78px;
+}
+
+.inline{
+    display: inline-block;
+}
+
+.hobbiesDescr{
+    padding-top: 2px;
+}
+
+.hobbiesTitle
+{
+    color: #34495E;
+    font-size: 12px;
+}
+
+.WEBADDICT{
+    margin-left: 21px;
+}
+
+.SÉRIVORE{
+    margin-left: 35px;
+}
+
+.MÉLOMANE{
+    margin-left: 36px;
+}
+
+.FASHIONISTA{
+    margin-left: 26px;
+}
+
+.EPICURIENNE{
+    margin-left: 22px;
+}
+
+.VOYAGEUSE{
+    margin-left: 25px;
+}
+
+/* processbar */
+.barfiller {
+    width: 270px;
+    height: 14px;
+    background: #DBE1E8;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .barfiller .fill {
+    border-radius: 5px;
+    display: block;
+    position: relative;
+    width: 0px;
+    height: 100%;
+    background: #333;
+    z-index: 1;
+  }
+  
+  .barfiller .tipWrap { display: none; }
+  
+  .barfiller .tip {
+    border-radius: 5px;
+    margin-top: -25px;
+    padding: 3px 9px;
+    font-family: 'Signika', sans-serif;
+    font-size: 10px;
+    color: #F5F6F6;
+    left: 0px;
+    position: absolute;
+    z-index: 2;
+    background: #333;
+  }
+  
+  .barfiller .tip:after {
+    border: solid;
+    border-color: rgba(0,0,0,.8) transparent;
+    border-width: 3px 3px 0 3px;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 17px;
+    top: 100%;
+    z-index: 9
+  }
+
+.barDescr1{
+    margin-top: 44px;
+    margin-left: 22px;
+    color: #35495E;
+}
+
+.descr2{
+    margin-left: 241px;
+}
+
+.bar1Line{
+    margin-top: 2px;
+    margin-left: 21px;
+}
+
+#bar2{
+    margin-left: 48px;
+}
+
+.barDescr2{
+    margin-top: 13px;
+    margin-left: 22px;
+    color: #35495E;
+}
+
+.descr3{
+    margin-left: 246px;
+}
+
+.bar2Line{
+    margin-top: 3px;
+    margin-left: 21px;
+}
+
+#bar4{
+    margin-left: 48px;
+}
+
+.barDescr3{
+    margin-top: 15px;
+    margin-left: 22px;
+    color: #35495E;
+}
+
+.descr5{
+    margin-left: 239px;
+}
+
+#bar6{
+    margin-left: 48px;
+}
+
+.bar4Line{
+    margin-top: 1px;
+    margin-left: 21px;
+}
+
+#bar8{
+    margin-left: 48px;
+}
 /* font-family: 'Lato', sans-serif;
 font-family: 'Signika', sans-serif;
 font-family: 'Signika Negative', sans-serif; */
