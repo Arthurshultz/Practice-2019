@@ -304,35 +304,41 @@ html{
 }
 
 /* звезды */
-.star-rating{
-	font-size: 0;
+.starRating{
+    float: left;
+    margin-top: 17px;
+    margin-left: 208px;
 }
-.star-rating__wrap{
-	display: inline-block;
-    font-size: 13px;
+
+.stars{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: #DBE1E8 url("img/smallICO.png") no-repeat;
 }
-.star-rating__wrap:after{
-	content: "";
-	display: table;
-	clear: both;
+
+.star1{
+    background-position: -18px -64px;
 }
-.star-rating__ico{
-	float: right;
-	padding-left: 3px;
-	cursor: pointer;
-	color: #B7BBC2;
+
+.star5{
+    margin-left: 4px;
+    background-position: -34px -64px;
 }
-.star-rating__ico:last-child{
-	padding-left: 0;
+
+.starRating2{
+    float: left;
+    margin-top: 15px;
+    margin-left: 209px;
 }
-.star-rating__input{
-	display: none;
+
+.star6{
+    background-position: -34px -64px;
 }
-.star-rating__ico:hover:before,
-.star-rating__ico:hover ~ .star-rating__ico:before,
-.star-rating__input:checked ~ .star-rating__ico:before
-{
-	content: "\f005";
+
+.star7{
+    margin-left: 2px;
+    background-position: -50px -64px;
 }
 
 /* левая колонка */
