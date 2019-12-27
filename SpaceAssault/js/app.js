@@ -60,7 +60,7 @@ var bullets = [];
 var enemies = [];
 var explosions = [];
 
-var lastFire = Date.now();
+var lastFire = Date.now(); 
 var gameTime = 0;
 var isGameOver;
 var terrainPattern;
