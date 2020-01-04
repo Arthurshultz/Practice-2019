@@ -1155,14 +1155,38 @@ html{
 }
 
 /* processbar */
+.spacer{
+    margin-bottom: 43px;
+}
+
+.barColumn1{
+    float: left;
+    margin-left: 20px;
+}
+
+.barColumn2{
+    float: right;
+    margin-right: 5px;
+}
+
+.barHolder{
+    width: 280px;
+    height: 40px;
+    margin-bottom: 14px;
+}
+
+.barDescr{
+    color: #35495E;
+    float: left;
+  }
+
 .progressbar { 
     height: 14px;
     width: 270px;
-    /* position: relative; */
     float: left;
     background: #DBE1E8;
     border-radius: 5px;
-    margin-top: 2px;
+    margin-top: 5px;
 }
 
 .progressbar > span {
@@ -1174,157 +1198,68 @@ html{
     border-bottom-left-radius: 5px;
   }
 
-  .bar2
-  {
-      margin-left: 51px;
+  .barColorFix > span{
+    background-color: #25C4EB;
   }
 
-  .bar2 > span{
-      background-color: #25C4EB;
-  }
-
-  .balloon{
-      float: left;
-      width: 38px;
-      height: 18px;
-      background-color: #35495E;
-      border-radius: 5px;
-      color: red;
-  }
-
-
-  .balloon > span {
-    content: "";
+.balloon{
     float: left;
-    width: 0;
-    border-top: 3px solid #35495E;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    margin-top: 2px;
-    margin-left: 16px;
-  }
-
-  .balloon > div{
-
-      color: white;
-      font-size: 11px;
-      text-align: center;
-      font-family: 'Signika', sans-serif;
-      margin-top: 3px;
-  }
-
-
-.bar1Line{
-    padding-top: 5px;
-    margin-left: 21px;
+    width: 38px;
+    height: 18px;
+    background-color: #35495E;
+    border-radius: 5px;
 }
 
-.barDescr1{
-    margin-top: 44px;
-    margin-left: 22px;
-    color: #35495E;
+.balloon > span {
+  content: "";
+  float: left;
+  width: 0;
+  border-top: 3px solid #35495E;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  margin-top: 2px;
+  margin-left: 16px;
 }
 
-.descr1{
-    float: left;
+.balloon > div{
+    color: white;
+    font-size: 11px;
+    text-align: center;
+    font-family: 'Signika', sans-serif;
+    margin-top: 3px;
 }
 
 .balloon1{
-    margin-left: 118px;
-}
-
-.descr2{
-    float: left;
-    margin-left: 89px;
+margin-left: 120px;
 }
 
 .balloon2{
-    margin-left: 5px;
+    margin-left: 60px;
 }
 
-
-.barDescr2{
-    margin-top: 50px;
-    margin-left: 22px;
-    color: #35495E;
+.balloon3{
+    float: right;
+    margin-right: 5px;
 }
 
-.descr3{
-    float: left;
-    margin-left: 160px;
+.balloon4{
+    margin-left: 130px;
 }
 
-.bar2Line{
-    margin-top: 3px;
-    margin-left: 21px;
+.balloon5{
+    margin-left: 8px;
 }
 
-.balloon3
-{
-    float: left;
-    margin-left: 50px;
-}
-
-.balloon4
-{
-    float: left;
+.balloon6{
     margin-left: 70px;
 }
 
-.barDescr3{
-    margin-top: 107px;
-    margin-left: 22px;
-    color: #35495E;
+.balloon7{
+    margin-left: 75px;
 }
 
-
-.barDescr4{
-    margin-top: 160px;
-    margin-left: 22px;
-    color: #35495E;
-}
-
-.descr5{
-    float: left;
-    margin-left: 53px;
-}
-
-
-.bar4Line{
-    margin-top: 1px;
-    margin-left: 21px;
-}
-
-.balloon5
-{
-    float: left;
-    margin-left: 150px;
-    /* margin-left: 50px; */
-}
-
-.balloon6
-{
-    float: left;
-    margin-left: 69px;
-    /* margin-left: 70px; */
-}
-
-
-.descr7{
-    float: left;
-    margin-left: 80px
-}
-
-.balloon7
-{
-    float: left;
-    margin-left: 123px;
-}
-
-.balloon8
-{
-    float: left;
-    margin-left: 53px;
+.balloon8{
+    margin-left: 90px;
 }
 
 /* футер */
