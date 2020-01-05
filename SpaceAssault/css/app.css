@@ -25,13 +25,20 @@ canvas {
     float: left;
     font-family: sans-serif;
     color: #757575;
-}
+}   
 
 #score {
-    float: right;
+    /* float: right; */
     color: white;
     font-size: 2em;
 }
+
+#manaScore {
+    /* float: right; */
+    color: white;
+    font-size: 2em;
+}
+
 
 .key {
     color: #aaffdd;
