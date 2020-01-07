@@ -1075,9 +1075,13 @@ html{
     background-color: white; 
 }
 
-.hobbies{
-    padding-top: 16px;
-    padding-left: 19px;
+.hobbiesHolder {
+    margin-left: 19px;
+    margin-bottom: 43px;
+}
+
+.hobbiesHolder > div{
+    margin-top: 16px;
 }
 
 .hobbiesICO{
@@ -1120,43 +1124,16 @@ html{
     display: inline-block;
 }
 
-.hobbiesDescr{
-    padding-top: 2px;
-}
-
 .hobbiesTitle
 {
     color: #34495E;
     font-size: 12px;
+    margin-top: 6px;
+    margin-left: 3px;
 }
 
-.WEBADDICT{
-    margin-left: 21px;
-}
-
-.SÉRIVORE{
-    margin-left: 35px;
-}
-
-.MÉLOMANE{
-    margin-left: 36px;
-}
-
-.FASHIONISTA{
-    margin-left: 26px;
-}
-
-.EPICURIENNE{
-    margin-left: 22px;
-}
-
-.VOYAGEUSE{
-    margin-left: 25px;
-}
-
-/* processbar */
-.spacer{
-    margin-bottom: 43px;
+.hobbiesTitleFixer{
+    margin-left:10px;
 }
 
 .barColumn1{
