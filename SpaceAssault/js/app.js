@@ -60,6 +60,7 @@ var enemies = [];
 var explosions = [];
 var megaliths = []; // megaliths
 var mana = []; // mana
+var manaDisappearances = []; // animation when use mana
 
 var spriteOffset = 60; //edge offset
 
@@ -70,6 +71,7 @@ var megalitMaxCount = 5;
 // mana count
 var manaMinCount = 4;
 var manaMaxCount = 12;
+var respawnCount = 3;
 
 var lastFire = Date.now();
 var gameTime = 0;
@@ -85,7 +87,9 @@ var manaScoreEl = document.getElementById('manaScore');
 // Speed in pixels per second
 var playerSpeed = 200;
 var bulletSpeed = 500;
-var enemySpeed = 100;
+
+var enemyHorSpeed = 100;
+var enemyVertSpeed = 100;
 
 var level = 0;
 
@@ -102,7 +106,7 @@ function spawnMegaliths(count) {
     while (count > 0) {
         megal = {
             pos: [randomRange(0, canvas.width - spriteOffset), randomRange(0, canvas.height - spriteOffset)],
-            sprite: new Sprite('img/sprites.png', [3, 213], [55, 53])
+            sprite: new Sprite('img/sprites.png', [3, 213], [65, 53])
         };
 
         if (boxCollides(megal.pos, megal.sprite.size, player.pos, player.sprite.size)) {
@@ -111,10 +115,13 @@ function spawnMegaliths(count) {
 
         for (var i = 0; i < megaliths.length; i++) {
 
-            var pos2 = megaliths[i].pos;
-            var size2 = megaliths[i].sprite.size;
+            var pos1 = megal.pos;
+            var size1 = [megal.sprite.size[0] * 2, megal.sprite.size[1] * 2];
 
-            if (boxCollides(megal.pos, megal.sprite.size, pos2, size2)) {
+            var pos2 = megaliths[i].pos;
+            var size2 = [megaliths[i].sprite.size[0] * 2, megaliths[i].sprite.size[1] * 2];
+
+            if (boxCollides(pos1, size1, pos2, size2)) {
                 continue top;
             }
         }
@@ -125,8 +132,24 @@ function spawnMegaliths(count) {
 }
 
 //add mana
-function spawnMana(count) {
+function manaMaker(isRespawn) {
 
+    var count;
+
+    // mana respawn clamp
+    if (isRespawn == true) {
+        if (mana.length < manaMinCount) {
+            count = randomRange(1, respawnCount);
+        }
+        else if (mana.length <= manaMaxCount - respawnCount){
+            count = randomRange(0, respawnCount);
+        } 
+    }
+    else {
+        count = randomRange(manaMinCount, manaMaxCount);
+    }
+
+    // spawn
     top:
     while (count > 0) {
         mn = {
@@ -177,7 +200,7 @@ function update(dt) {
             pos: [canvas.width,
             Math.random() * (canvas.height - 39)],
             sprite: new Sprite('img/sprites.png', [0, 78], [80, 39],
-                6, [0, 1, 2, 3, 2, 1])
+                6, [0, 1, 2, 3, 2, 1]),
         });
     }
 
@@ -255,7 +278,7 @@ function updateEntities(dt) {
 
     // Update all the enemies
     for (var i = 0; i < enemies.length; i++) {
-        enemies[i].pos[0] -= enemySpeed * dt;
+        enemies[i].pos[0] -= enemyHorSpeed * dt;
         enemies[i].sprite.update(dt);
 
         // Remove if offscreen
@@ -280,6 +303,18 @@ function updateEntities(dt) {
     for (var i = 0; i < mana.length; i++) {
         mana[i].sprite.update(dt);
     }
+
+    // Update all used mana
+    for (var i = 0; i < manaDisappearances.length; i++) {
+        manaDisappearances[i].sprite.update(dt);
+
+        // Remove if animation is done
+        if (manaDisappearances[i].sprite.done) {
+            manaDisappearances.splice(i, 1);
+            i--;
+        }
+    }
+
 }
 
 // Collisions
@@ -316,7 +351,7 @@ function checkCollisions(dt) {
                 score += 100;
 
                 // Add an explosion
-                explosions.push({
+                manaDisappearances.push({
                     pos: pos,
                     sprite: new Sprite('img/sprites.png',
                         [0, 117],
@@ -383,11 +418,13 @@ function checkCollisions(dt) {
                 var y = pos[1] + Math.floor(size[0] / 2);
                 var y2 = pos2[1] + Math.floor(size[0] / 2);
 
+                enemies[j].pos[0] += enemyHorSpeed / 2 * dt;
+
                 if (y > y2) {
-                    enemies[j].pos[1] -= enemySpeed * dt;
+                    enemies[j].pos[1] -= enemyVertSpeed * dt;
                 }
                 else {
-                    enemies[j].pos[1] += enemySpeed * dt;
+                    enemies[j].pos[1] += enemyVertSpeed * dt;
                 }
             }
         }
@@ -415,15 +452,8 @@ function checkCollisions(dt) {
 
             mana.splice(k, 1);
 
-            // random chance respawn mana
-            if (mana.length < manaMinCount) {
-                spawnMana(1);
-            }
-            else {
-                if (randomRange(0, 1) > 0) {
-                    spawnMana(1);
-                }
-            }
+            manaMaker(true);
+
             break;
         }
     }
@@ -462,6 +492,7 @@ function render() {
 
     renderEntities(megaliths);
     renderEntities(mana);
+    renderEntities(manaDisappearances);
 };
 
 function renderEntities(list) {
@@ -499,9 +530,10 @@ function reset() {
 
     megaliths = [];
     mana = [];
+    manaDisappearances = [];
 
     player.pos = [55, canvas.height / 2];
 
     spawnMegaliths(randomRange(megalithsMinCount, megalitMaxCount));
-    spawnMana(randomRange(manaMinCount,manaMaxCount));
+    manaMaker(false);
 }; 
