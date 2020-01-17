@@ -32,7 +32,7 @@ namespace Controller
 
         public void KeyDown(Keys key)
         {
-            // fix arrow
+            // fix arrows
 
             switch (key)
             {

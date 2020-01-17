@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public enum Direction { Up, Right, Down, Left }
+public enum Direction { Up, Right, Down, Left, None }
 namespace Model
 {
     public interface IModel

@@ -16,6 +16,7 @@ namespace View
         [STAThread]
         static void Main()
         {
+
             GameModel _gameModel = new GameModel();
             IController _controller = new PackmanController(_gameModel);
 

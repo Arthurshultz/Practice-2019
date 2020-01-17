@@ -10,13 +10,15 @@ namespace Model.GameObjects
 {
     public abstract class MovingObject : GameObject
     {
+        public Direction currentDirection;
+
         public MovingObject(int x, int y, int width, int height, Bitmap sprite) 
             : base(x, y, width,  height, sprite)
         {}
 
-        public void Move(Direction dir)
+        public void Move()
         {
-            switch (dir)
+            switch (currentDirection)
             {
                 case Direction.Up: Position.Y -= 1;
                     break;
@@ -25,6 +27,25 @@ namespace Model.GameObjects
                 case Direction.Down: Position.Y += 1;
                     break;
                 case Direction.Left: Position.X -= 1;
+                    break;
+            }
+        }
+
+        public virtual void PushOff()
+        {
+            switch (currentDirection)
+            {
+                case Direction.Up:
+                    Position.Y += 1;
+                    break;
+                case Direction.Right:
+                    Position.X -= 1;
+                    break;
+                case Direction.Down:
+                    Position.Y -= 1;
+                    break;
+                case Direction.Left:
+                    Position.X += 1;
                     break;
             }
         }
