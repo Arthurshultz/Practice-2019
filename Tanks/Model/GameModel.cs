@@ -218,7 +218,7 @@ namespace Model
             int offset = 4;
             int posY = 0;
 
-            string path = Path.Combine(Environment.CurrentDirectory, "level.lvl");
+            string path = Path.Combine(Environment.CurrentDirectory, @"..\..\..\Levels", "level.lvl");
 
             if (File.Exists(path))
             {
