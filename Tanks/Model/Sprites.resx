@@ -121,11 +121,38 @@
   <data name="Apple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Apple.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BrickWall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BrickWall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KolobokBullet_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\KolobokBullet_Down.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KolobokBullet_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\KolobokBullet_Left.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KolobokBullet_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\KolobokBullet_Right.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KolobokBullet_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\KolobokBullet_Up.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Kolobok_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Kolobok_Left.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Kolobok_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Kolobok_Right.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TankBullet_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TankBullet_Down.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TankBullet_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TankBullet_Left.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TankBullet_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TankBullet_Right.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TankBullet_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TankBullet_Up.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tank_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Tank_Down.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

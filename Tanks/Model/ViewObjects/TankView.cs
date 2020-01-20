@@ -10,13 +10,22 @@ namespace Model.ViewObjects
 {
     class TankView : Tank
     {
-        public TankView(int x, int y, int width, int height, Bitmap sprite)
-            : base(x, y, width, height, sprite)
-        {}
+        public TankView(int x, int y, int spriteWidth, int spriteHeight, Direction direction) //int width, int height,, Bitmap sprite 
+            : base(x, y, spriteWidth, spriteHeight)//, width, height, sprite
+        {
+            CurrentDirection = direction;
+
+            Sprite = Sprites.Tank_Down;
+
+            BulletWidth = 16;
+            BulletHeight = 16;
+
+            Speed = 1;
+        }
 
         public new void Draw()
         {
-            switch (currentDirection)
+            switch (CurrentDirection)
             {
                 case Direction.Up:
                     Sprite = Sprites.Tank_Up;

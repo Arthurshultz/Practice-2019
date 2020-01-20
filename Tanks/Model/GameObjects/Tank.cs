@@ -7,27 +7,30 @@ using System.Threading.Tasks;
 
 namespace Model.GameObjects
 {
-    class Tank : MovingObject
+    class Tank : MovingObject, IShooter
     {
-        public Tank(int x, int y, int width, int height, Bitmap sprite)
-            : base(x, y, width, height, sprite)
-        { }
+        public int BulletWidth;
+        public int BulletHeight;
+
+        public Tank(int x, int y, int spriteWidth, int spriteHeight) //, Bitmap sprite
+            : base(x, y, spriteWidth, spriteHeight) //, sprite
+        {}
 
         public void TurnAround()
         {
-            switch (currentDirection)
+            switch (CurrentDirection)
             {
                 case Direction.Up:
-                    currentDirection = Direction.Down;
+                    CurrentDirection = Direction.Down;
                     break;
                 case Direction.Right:
-                    currentDirection = Direction.Left;
+                    CurrentDirection = Direction.Left;
                     break;
                 case Direction.Down:
-                    currentDirection = Direction.Up;
+                    CurrentDirection = Direction.Up;
                     break;
                 case Direction.Left:
-                    currentDirection = Direction.Right;
+                    CurrentDirection = Direction.Right;
                     break;
             }
         }
@@ -39,12 +42,40 @@ namespace Model.GameObjects
                 Random rnd = new Random();
                 int rndDir = rnd.Next(4);
 
-                if (rndDir != (int)currentDirection)
+                if (rndDir != (int)CurrentDirection)
                 {
-                    currentDirection = (Direction)rndDir;
+                    CurrentDirection = (Direction)rndDir;
                     break;
                 }
             }
+        }
+
+        public GameObject Shoot()
+        {
+            int posX = 0;
+            int posY = 0;
+
+            switch (CurrentDirection)
+            {
+                case Direction.Up:
+                    posX = Position.X + (SpriteWidth / 2) - (BulletWidth / 2);
+                    posY = Position.Y - BulletHeight;
+                    break;
+                case Direction.Right:
+                    posX = Position.X + SpriteWidth;
+                    posY = Position.Y + (BulletHeight / 2) + (BulletWidth / 2);
+                    break;
+                case Direction.Down:
+                    posX = Position.X + (SpriteWidth / 2) - (BulletWidth / 2);
+                    posY = Position.Y + SpriteHeight;
+                    break;
+                case Direction.Left:
+                    posX = Position.X - BulletWidth;
+                    posY = Position.Y + (BulletHeight / 2) + (BulletWidth / 2);
+                    break;
+            }
+
+            return new TankBulletView(posX, posY, SpriteWidth, SpriteHeight, CurrentDirection);
         }
     }
 }

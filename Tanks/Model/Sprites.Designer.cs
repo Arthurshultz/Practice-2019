@@ -73,6 +73,16 @@ namespace Model {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap BrickWall {
+            get {
+                object obj = ResourceManager.GetObject("BrickWall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Kolobok_Left {
             get {
                 object obj = ResourceManager.GetObject("Kolobok_Left", resourceCulture);
@@ -86,6 +96,46 @@ namespace Model {
         public static System.Drawing.Bitmap Kolobok_Right {
             get {
                 object obj = ResourceManager.GetObject("Kolobok_Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap KolobokBullet_Down {
+            get {
+                object obj = ResourceManager.GetObject("KolobokBullet_Down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap KolobokBullet_Left {
+            get {
+                object obj = ResourceManager.GetObject("KolobokBullet_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap KolobokBullet_Right {
+            get {
+                object obj = ResourceManager.GetObject("KolobokBullet_Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap KolobokBullet_Up {
+            get {
+                object obj = ResourceManager.GetObject("KolobokBullet_Up", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +176,46 @@ namespace Model {
         public static System.Drawing.Bitmap Tank_Up {
             get {
                 object obj = ResourceManager.GetObject("Tank_Up", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap TankBullet_Down {
+            get {
+                object obj = ResourceManager.GetObject("TankBullet_Down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap TankBullet_Left {
+            get {
+                object obj = ResourceManager.GetObject("TankBullet_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap TankBullet_Right {
+            get {
+                object obj = ResourceManager.GetObject("TankBullet_Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap TankBullet_Up {
+            get {
+                object obj = ResourceManager.GetObject("TankBullet_Up", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

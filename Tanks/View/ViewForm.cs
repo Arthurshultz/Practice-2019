@@ -23,8 +23,6 @@ namespace View
             _gameObjects = gameObjects;
 
             InitializeComponent();
-
-            
         }
 
         private void ViewForm_KeyDown(object sender, KeyEventArgs e)
@@ -42,6 +40,7 @@ namespace View
         {
             _controller.NewGame();
             BtnStart.Text = "Resstart";
+            ActiveControl = null;
         }
 
         public void Draw()
@@ -58,7 +57,8 @@ namespace View
             // Draw everything
             foreach (var go in _gameObjects)
             {
-                g.DrawImage(go.Draw(), go.Position.X, go.Position.Y, go.Width, go.Height);
+                if (go != null)
+                g.DrawImage(go.Draw(), go.Position.X, go.Position.Y, go.SpriteWidth, go.SpriteHeight);
             }
 
             picBoxField.Image = bm;

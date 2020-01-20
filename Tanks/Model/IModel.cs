@@ -15,6 +15,7 @@ namespace Model
 
         void NewGame();
         void Update();
+        void KolobokShoot();
     }
 
 }

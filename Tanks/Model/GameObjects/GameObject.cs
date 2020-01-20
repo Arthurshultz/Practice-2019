@@ -11,20 +11,20 @@ namespace Model.GameObjects
     {
         public Point Position;
 
-        public int Width;
-        public int Height;
+        public int SpriteWidth;
+        public int SpriteHeight;
     
         public Bitmap Sprite;
 
-        public GameObject(int x, int y, int width, int height, Bitmap sprite)
+        public GameObject(int x, int y, int spriteWidth, int spriteHeight) //, Bitmap sprite
         {
             Position.X = x;
             Position.Y = y;
 
-            Width = width;
-            Height = height;
+            SpriteWidth = spriteWidth;
+            SpriteHeight = spriteHeight;
 
-            Sprite = sprite;
+            //Sprite = sprite;
         }
 
         public Bitmap Draw()

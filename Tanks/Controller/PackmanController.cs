@@ -52,8 +52,10 @@ namespace Controller
                 case Keys.Down:
                     _model.Direction = Direction.Down;
                     break;
+                case Keys.Space:
+                    _model.KolobokShoot();
+                    break;
             }
         }
-
     }
 }

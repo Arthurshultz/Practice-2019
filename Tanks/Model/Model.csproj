@@ -44,9 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameObjects\GameObject.cs" />
+    <Compile Include="GameObjects\IShooter.cs" />
     <Compile Include="GameObjects\Kolobok.cs" />
     <Compile Include="GameObjects\MovingObject.cs" />
     <Compile Include="GameObjects\Tank.cs" />
+    <Compile Include="ViewObjects\AppleView.cs" />
+    <Compile Include="ViewObjects\BrickWallView.cs" />
+    <Compile Include="ViewObjects\KolobokBulletView.cs" />
+    <Compile Include="ViewObjects\TankBulletView.cs" />
     <Compile Include="IModel.cs" />
     <Compile Include="GameModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,7 +69,9 @@
       <LastGenOutput>Sprites.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\TankBullet_Down.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Apple.jpg" />
   </ItemGroup>
@@ -85,6 +92,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Tank_Up.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TankBullet_Left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TankBullet_Right.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TankBullet_Up.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KolobokBullet_Down.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KolobokBullet_Left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KolobokBullet_Right.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KolobokBullet_Up.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BrickWall.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
