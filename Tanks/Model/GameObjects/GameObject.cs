@@ -16,6 +16,7 @@ namespace Model.GameObjects
     
         public Bitmap Sprite;
 
+
         public GameObject(int x, int y, int spriteWidth, int spriteHeight) //, Bitmap sprite
         {
             Position.X = x;

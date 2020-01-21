@@ -64,10 +64,12 @@
             // ScoreAmount
             // 
             this.ScoreAmount.AutoSize = true;
-            this.ScoreAmount.Location = new System.Drawing.Point(617, 9);
+            this.ScoreAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ScoreAmount.Location = new System.Drawing.Point(93, 12);
             this.ScoreAmount.Name = "ScoreAmount";
-            this.ScoreAmount.Size = new System.Drawing.Size(0, 13);
+            this.ScoreAmount.Size = new System.Drawing.Size(21, 24);
             this.ScoreAmount.TabIndex = 2;
+            this.ScoreAmount.Text = "0";
             // 
             // ViewForm
             // 
@@ -77,7 +79,9 @@
             this.Controls.Add(this.ScoreAmount);
             this.Controls.Add(this.picBoxField);
             this.Controls.Add(this.BtnStart);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "ViewForm";
             this.Text = "Tanks";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ViewForm_KeyDown);

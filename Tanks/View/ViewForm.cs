@@ -18,10 +18,16 @@ namespace View
         IController _controller;
         IModelView _modelView;
 
+        ViewReport viewReport;
+
         public ViewForm(IController controller,IModelView modelView)
         {
             _controller = controller;
             _modelView = modelView;
+
+            viewReport = new ViewReport();
+
+            viewReport.Show();
 
             InitializeComponent();
         }
@@ -33,8 +39,11 @@ namespace View
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            ScoreAmount.Text = _modelView.Score.ToString();
+            ScoreAmount.Text = $"SCORE: {_modelView.Score.ToString()}";
             BtnStart.Text = _modelView.GameOver ? "Start" : "Resstart";
+
+            // это дичайшая дичь
+            viewReport.DGVReport.DataSource = _modelView.GameObjects.Select(x => new { Name = x, Position = x.Position }).ToList();
 
             _controller.Update();
             Draw();
