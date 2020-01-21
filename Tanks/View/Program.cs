@@ -14,8 +14,10 @@ namespace View
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] arg)
         {
+            // параметры
+
 
             GameModel _gameModel = new GameModel();
             IController _controller = new PackmanController(_gameModel);
@@ -23,7 +25,8 @@ namespace View
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new ViewForm(_controller,_gameModel.GameObjects));
+            //Application.Run(new ViewForm(_controller,_gameModel.GameObjects,_gameModel.Score,_gameModel.GameOver));
+            Application.Run(new ViewForm(_controller, _gameModel));
         }
     }
 }

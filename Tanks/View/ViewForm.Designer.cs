@@ -32,6 +32,7 @@
             this.BtnStart = new System.Windows.Forms.Button();
             this.picBoxField = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.ScoreAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxField)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,11 +61,20 @@
             this.timer.Interval = 10;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // ScoreAmount
+            // 
+            this.ScoreAmount.AutoSize = true;
+            this.ScoreAmount.Location = new System.Drawing.Point(617, 9);
+            this.ScoreAmount.Name = "ScoreAmount";
+            this.ScoreAmount.Size = new System.Drawing.Size(0, 13);
+            this.ScoreAmount.TabIndex = 2;
+            // 
             // ViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 692);
+            this.Controls.Add(this.ScoreAmount);
             this.Controls.Add(this.picBoxField);
             this.Controls.Add(this.BtnStart);
             this.KeyPreview = true;
@@ -73,6 +83,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ViewForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxField)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -81,6 +92,7 @@
         private System.Windows.Forms.Button BtnStart;
         private System.Windows.Forms.PictureBox picBoxField;
         public System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label ScoreAmount;
     }
 }
 

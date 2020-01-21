@@ -7,17 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
 namespace Model
 {
-    public class GameModel : IModel
+    public class GameModel : IModel, IModelView
     {
         private List<GameObject> _gameObjects = new List<GameObject>();
         public IEnumerable<GameObject> GameObjects { get => _gameObjects; }
 
         private int _score;
         public int Score { get => _score; }
+
+        bool _gameOver = false;
+        public bool GameOver { get => _gameOver;}
 
         private KolobokView _kolobok; 
 
@@ -33,17 +34,19 @@ namespace Model
         const int _WallSize = 56;
         const int _GOSize = 40;
 
-        bool _gameOver = true;
-
         Random rnd = new Random();
 
         public GameModel()
         {
             LoadLevel();
+            _gameOver = !_gameOver;
         }
 
         public void NewGame()
         {
+            _gameObjects.Clear();
+            _score = 0;
+            LoadLevel();
             _gameOver = !_gameOver;
         }
 
@@ -100,11 +103,7 @@ namespace Model
             foreach (var t in _gameObjects.OfType<TankView>().ToArray())
             {
                 if (ObjectCollision(_kolobok, t))
-                {
-                   
-                    // GameOver ???
-                    //_gameOver = !_gameOver;
-                }
+                    _gameOver = !_gameOver;
             }
 
             foreach (var a in _gameObjects.OfType<AppleView>().ToArray())
@@ -125,14 +124,10 @@ namespace Model
             foreach (var t in _gameObjects.OfType<TankView>().ToArray())
             {
                 if (rnd.Next(1000) < 10)
-                {
                     t.ChangeDirection();
-                }
 
                 if (rnd.Next(3000) < 10)
-                {
                     _gameObjects.Add(t.Shoot());
-                }
 
                 if (!InScreen(t))
                 {
@@ -170,10 +165,12 @@ namespace Model
                 foreach (var w in _gameObjects.OfType<BrickWallView>().ToArray())
                 {
                     if (ObjectCollision(tb, w) || !InScreen(tb))
-                    {
                         _gameObjects.Remove(tb);
-                    }
                 }
+
+                if (ObjectCollision(tb, _kolobok))
+                    _gameOver = !GameOver;
+
                 tb.Move();
                 tb.Draw();
             }
@@ -183,9 +180,7 @@ namespace Model
                 foreach (var w in _gameObjects.OfType<BrickWallView>().ToArray())
                 {
                     if (ObjectCollision(kb, w) || !InScreen(kb))
-                    {
                         _gameObjects.Remove(kb);
-                    }
                 }
 
                 foreach (var t in _gameObjects.OfType<TankView>().ToArray())
@@ -204,7 +199,61 @@ namespace Model
 
         private void PopulationControl()
         {
-            // respawn 
+            if (_gameObjects.OfType<TankView>().Count() < _tanksCount)
+            {
+            top:
+                while (true)
+                {
+                    var t = new TankView(rnd.Next(_mapWidth - _WallSize), 
+                        rnd.Next(_mapHeight - _WallSize), 
+                        _GOSize, _GOSize, 
+                        (Direction)rnd.Next(4));
+
+                    if (ObjectCollision(t, _kolobok))
+                        goto top;
+
+                    foreach (var w in _gameObjects.OfType<BrickWallView>().ToArray())
+                    {
+                        if (ObjectCollision(t, w))
+                            goto top;
+                    }
+
+                    foreach (var t2 in _gameObjects.OfType<TankView>().ToArray())
+                    {
+                        if (ObjectCollision(t, t2) && t != t2)
+                            goto top;
+                    }
+
+                    _gameObjects.Add(t);
+                    break;
+                }
+            }
+
+            if (_gameObjects.OfType<AppleView>().Count() < _appleCount)
+            {
+            top:
+                while (true)
+                {
+                    var a = new AppleView(rnd.Next(_mapWidth - _WallSize), 
+                        rnd.Next(_mapHeight - _WallSize),
+                        _GOSize, _GOSize);
+
+                    foreach (var w in _gameObjects.OfType<BrickWallView>().ToArray())
+                    {
+                        if (ObjectCollision(a, w))
+                            goto top;
+                    }
+
+                    foreach (var a2 in _gameObjects.OfType<AppleView>().ToArray())
+                    {
+                        if (ObjectCollision(a, a2) && a != a2)
+                            goto top;
+                    }
+
+                    _gameObjects.Add(a);
+                    break;
+                }
+            }
         }
 
         public void KolobokShoot()
@@ -218,7 +267,7 @@ namespace Model
             int offset = 4;
             int posY = 0;
 
-            string path = Path.Combine(Environment.CurrentDirectory, @"..\..\..\Levels", "level.lvl");
+            string path = Path.Combine(Environment.CurrentDirectory, "Resources", "level.lvl");//Environment.CurrentDirectory, @"..\..\..\Levels", "level.lvl"
 
             if (File.Exists(path))
             {
@@ -252,6 +301,10 @@ namespace Model
                         posY += _WallSize;
                     }
                 }
+            }
+            else
+            {
+                throw new FileNotFoundException("level.lvl not found");
             }
         }
     }

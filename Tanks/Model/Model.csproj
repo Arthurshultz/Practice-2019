@@ -48,6 +48,7 @@
     <Compile Include="GameObjects\Kolobok.cs" />
     <Compile Include="GameObjects\MovingObject.cs" />
     <Compile Include="GameObjects\Tank.cs" />
+    <Compile Include="IModelView.cs" />
     <Compile Include="ViewObjects\AppleView.cs" />
     <Compile Include="ViewObjects\BrickWallView.cs" />
     <Compile Include="ViewObjects\KolobokBulletView.cs" />
@@ -70,6 +71,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\level.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\TankBullet_Down.jpg" />
   </ItemGroup>
   <ItemGroup>

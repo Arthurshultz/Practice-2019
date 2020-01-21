@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controller;
+using Model;
 using Model.GameObjects;
 
 namespace View
@@ -15,12 +16,12 @@ namespace View
     public partial class ViewForm : Form
     {
         IController _controller;
-        IEnumerable<GameObject> _gameObjects;
+        IModelView _modelView;
 
-        public ViewForm(IController controller,IEnumerable<GameObject> gameObjects)
+        public ViewForm(IController controller,IModelView modelView)
         {
             _controller = controller;
-            _gameObjects = gameObjects;
+            _modelView = modelView;
 
             InitializeComponent();
         }
@@ -32,6 +33,9 @@ namespace View
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            ScoreAmount.Text = _modelView.Score.ToString();
+            BtnStart.Text = _modelView.GameOver ? "Start" : "Resstart";
+
             _controller.Update();
             Draw();
         }
@@ -39,7 +43,6 @@ namespace View
         private void BtnStart_Click(object sender, EventArgs e)
         {
             _controller.NewGame();
-            BtnStart.Text = "Resstart";
             ActiveControl = null;
         }
 
@@ -55,10 +58,16 @@ namespace View
                                 new SolidBrush(Color.LightGray), new PointF(0, 0));
 
             // Draw everything
-            foreach (var go in _gameObjects)
+            foreach (var go in _modelView.GameObjects)
             {
                 if (go != null)
                 g.DrawImage(go.Draw(), go.Position.X, go.Position.Y, go.SpriteWidth, go.SpriteHeight);
+            }
+
+            if (_modelView.GameOver)
+            {
+                g.DrawString("GAME OVER", new Font(FontFamily.GenericSerif, 70, FontStyle.Bold),
+                                new SolidBrush(Color.LightGray), new PointF(0, 250));
             }
 
             picBoxField.Image = bm;
