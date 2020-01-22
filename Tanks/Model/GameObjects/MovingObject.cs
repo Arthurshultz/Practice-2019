@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace Model.GameObjects
+﻿namespace Model.GameObjects
 {
     public abstract class MovingObject : GameObject
     {
         public Direction CurrentDirection;
         public int Speed;
 
-        public MovingObject(int x, int y, int spriteWidth, int spriteHeight) //, Bitmap sprite
-            : base(x, y, spriteWidth, spriteHeight)//, sprite
+        public MovingObject(int x, int y, int spriteWidth, int spriteHeight)
+            : base(x, y, spriteWidth, spriteHeight)
         { }
 
         public void Move()

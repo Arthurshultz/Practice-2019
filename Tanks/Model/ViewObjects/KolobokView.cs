@@ -1,17 +1,11 @@
 ﻿using Model.GameObjects;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model.ViewObjects
 {
     public class KolobokView : Kolobok
     {
-        public KolobokView(int x, int y, int spriteWidth, int spriteHeight) //, Bitmap sprite
-            : base(x, y, spriteWidth, spriteHeight) //, sprite
+        public KolobokView(int x, int y, int spriteWidth, int spriteHeight)
+            : base(x, y, spriteWidth, spriteHeight)
         {
             Sprite = Sprites.Kolobok_Right;
 

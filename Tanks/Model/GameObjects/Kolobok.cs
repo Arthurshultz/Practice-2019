@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
+﻿using System.Timers;
 
 namespace Model.GameObjects
 {
@@ -16,8 +10,8 @@ namespace Model.GameObjects
         public bool CanShoot = true;
         private Timer _timer;
 
-        public Kolobok(int x, int y, int spriteWidth, int spriteHeight) //, Bitmap sprite
-            : base(x, y, spriteWidth, spriteHeight) //, sprite
+        public Kolobok(int x, int y, int spriteWidth, int spriteHeight)
+            : base(x, y, spriteWidth, spriteHeight)
         { }
 
         public override void PushOff()
@@ -75,11 +69,8 @@ namespace Model.GameObjects
         private void SetTimer()
         {
             CanShoot = false;
-            // Create a timer with a two second interval.
             _timer = new Timer(1000);
-            // Hook up the Elapsed event for the timer. 
             _timer.Elapsed += OnTimedEvent;
-            //_timer.AutoReset = true;
             _timer.Enabled = true;
         }
 

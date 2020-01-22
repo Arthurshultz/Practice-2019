@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model.GameObjects
 {
@@ -12,8 +7,8 @@ namespace Model.GameObjects
         public int BulletWidth;
         public int BulletHeight;
 
-        public Tank(int x, int y, int spriteWidth, int spriteHeight) //, Bitmap sprite
-            : base(x, y, spriteWidth, spriteHeight) //, sprite
+        public Tank(int x, int y, int spriteWidth, int spriteHeight)
+            : base(x, y, spriteWidth, spriteHeight)
         {}
 
         public void TurnAround()

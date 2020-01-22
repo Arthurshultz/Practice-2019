@@ -1,18 +1,20 @@
 ﻿using Model.GameObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Model.ViewObjects
 {
     class BrickWallView : GameObject
     {
-        public BrickWallView(int x, int y, int spriteWidth, int spriteHeight)
+        public bool IsDestroible;
+        public bool IsMissesBullet;
+
+
+        public BrickWallView(int x, int y, int spriteWidth, int spriteHeight, Bitmap sprite, bool isDestroible, bool isMissesBullet)
             : base(x, y, spriteWidth, spriteHeight)
         {
-            Sprite = Sprites.BrickWall;
+            Sprite = sprite;
+            IsDestroible = isDestroible;
+            IsMissesBullet = isMissesBullet;
         }
     }
 }

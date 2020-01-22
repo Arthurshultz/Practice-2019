@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controller;
 using Model;
@@ -16,17 +13,30 @@ namespace View
         [STAThread]
         static void Main(string[] arg)
         {
-            // параметры
-
-
-            GameModel _gameModel = new GameModel();
-            IController _controller = new PackmanController(_gameModel);
+            bool isLoaded = true;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new ViewForm(_controller,_gameModel.GameObjects,_gameModel.Score,_gameModel.GameOver));
-            Application.Run(new ViewForm(_controller, _gameModel));
+            try
+            {
+                GameModel _gameModell = new GameModel(int.Parse(arg[0]), int.Parse(arg[1]), int.Parse(arg[2]), int.Parse(arg[3]), int.Parse(arg[4]));
+                IController _controllerr = new PackmanController(_gameModell);
+                Application.Run(new ViewForm(_controllerr, _gameModell, int.Parse(arg[0]), int.Parse(arg[1])));
+            }
+            catch
+            {
+                isLoaded = !isLoaded;
+            }
+            finally
+            {
+                if (!isLoaded)
+                {
+                    GameModel _gameModel = new GameModel();
+                    IController _controller = new PackmanController(_gameModel);
+                    Application.Run(new ViewForm(_controller, _gameModel));
+                }
+            }     
         }
     }
 }

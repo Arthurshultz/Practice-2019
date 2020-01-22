@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Model.GameObjects
+﻿namespace Model.GameObjects
 {
     public class KolobokBulletView : MovingObject
     {
-        public KolobokBulletView(int x, int y, int spriteWidth, int spriteHeight, Direction direction) //, Bitmap sprite
-            : base(x, y, spriteWidth, spriteHeight)//, sprite
+        public KolobokBulletView(int x, int y, int spriteWidth, int spriteHeight, Direction direction)
+            : base(x, y, spriteWidth, spriteHeight)
         {
             CurrentDirection = direction;
 

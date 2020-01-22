@@ -1,17 +1,11 @@
 ﻿using Model.GameObjects;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model.ViewObjects
 {
     class TankView : Tank
     {
-        public TankView(int x, int y, int spriteWidth, int spriteHeight, Direction direction) //int width, int height,, Bitmap sprite 
-            : base(x, y, spriteWidth, spriteHeight)//, width, height, sprite
+        public TankView(int x, int y, int spriteWidth, int spriteHeight, Direction direction) 
+            : base(x, y, spriteWidth, spriteHeight)
         {
             CurrentDirection = direction;
 

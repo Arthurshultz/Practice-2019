@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controller;
 using Model;
-using Model.GameObjects;
 
 namespace View
 {
@@ -22,12 +14,28 @@ namespace View
         ViewReport viewReport;
         bool isOpen = false;
 
+        int _formOffsetWidth = 40;
+        int _formOffsetHeight = 90;
+
         public ViewForm(IController controller,IModelView modelView)
         {
             _controller = controller;
             _modelView = modelView;
 
             InitializeComponent();
+        }
+
+        public ViewForm(IController controller, IModelView modelView, int fieldWidth, int fieldHeight)
+        {
+            _controller = controller;
+            _modelView = modelView;
+
+            InitializeComponent();
+
+            this.Width = fieldWidth + _formOffsetWidth;
+            this.Height = fieldHeight + _formOffsetHeight;
+            picBoxField.Width = fieldWidth;
+            picBoxField.Height = fieldWidth;
         }
 
         private void ViewForm_KeyDown(object sender, KeyEventArgs e)
@@ -95,6 +103,5 @@ namespace View
 
             picBoxField.Image = bm;
         }
-
     }
 }

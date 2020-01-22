@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model
 {
@@ -25,11 +23,13 @@ namespace Model
         public Direction Direction { get; set; }
 
         // default game settigns
-        private int _mapWidth = 640;
-        private int _mapHeight = 640;
+        int _mapWidth = 640;
+        int _mapHeight = 640;
 
-        private int _tanksCount = 5;
-        private int _appleCount = 5;
+        int _tanksCount = 5;
+        int _appleCount = 5;
+
+        int _speed = 1;
 
         const int _WallSize = 56;
         const int _GOSize = 40;
@@ -40,6 +40,20 @@ namespace Model
         {
             LoadLevel();
             _gameOver = !_gameOver;
+        }
+
+        public GameModel(int fieldWidth, int fieldHeight, int tanksCount, int appleCount, int speed)
+        {
+            LoadLevel();
+            _gameOver = !_gameOver;
+
+            _mapWidth = fieldWidth;
+            _mapHeight = fieldHeight;
+
+            _tanksCount = tanksCount;
+            _appleCount = appleCount;
+
+            _speed = speed;
         }
 
         public void NewGame()
@@ -164,8 +178,21 @@ namespace Model
             {
                 foreach (var w in _gameObjects.OfType<BrickWallView>().ToArray())
                 {
-                    if (ObjectCollision(tb, w) || !InScreen(tb))
+                    if (!InScreen(tb))
                         _gameObjects.Remove(tb);
+
+                    if (ObjectCollision(tb, w))
+                    {
+                        if (w.IsDestroible && !w.IsMissesBullet)
+                        {
+                            _gameObjects.Remove(tb);
+                            _gameObjects.Remove(w);
+                        }
+                        else if (!w.IsDestroible && !w.IsMissesBullet)
+                        {
+                            _gameObjects.Remove(tb);
+                        }
+                    }
                 }
 
                 if (ObjectCollision(tb, _kolobok))
@@ -179,8 +206,21 @@ namespace Model
             {
                 foreach (var w in _gameObjects.OfType<BrickWallView>().ToArray())
                 {
-                    if (ObjectCollision(kb, w) || !InScreen(kb))
+                    if (!InScreen(kb))
                         _gameObjects.Remove(kb);
+
+                    if (ObjectCollision(kb, w))
+                    {
+                        if (w.IsDestroible && !w.IsMissesBullet)
+                        {
+                            _gameObjects.Remove(kb);
+                            _gameObjects.Remove(w);
+                        }
+                        else if(!w.IsDestroible && !w.IsMissesBullet)
+                        {
+                            _gameObjects.Remove(kb);
+                        }
+                    }
                 }
 
                 foreach (var t in _gameObjects.OfType<TankView>().ToArray())
@@ -267,7 +307,7 @@ namespace Model
             int offset = 4;
             int posY = 0;
 
-            string path = Path.Combine(Environment.CurrentDirectory, "Resources", "level.lvl");//Environment.CurrentDirectory, @"..\..\..\Levels", "level.lvl"
+            string path = Path.Combine(Environment.CurrentDirectory, "Resources", "level.lvl");
 
             if (File.Exists(path))
             {
@@ -286,7 +326,13 @@ namespace Model
                                     _gameObjects.Add(new AppleView(posX + offset, posY + offset, _GOSize, _GOSize));
                                     break;
                                 case 'w':
-                                    _gameObjects.Add(new BrickWallView(posX, posY, _WallSize, _WallSize));
+                                    _gameObjects.Add(new BrickWallView(posX, posY, _WallSize, _WallSize, Sprites.BrickWall, true, false));
+                                    break;
+                                case '=':
+                                    _gameObjects.Add(new BrickWallView(posX, posY, _WallSize, _WallSize, Sprites.VibraniumWall, false, false));
+                                    break;
+                                case '#':
+                                    _gameObjects.Add(new BrickWallView(posX, posY, _WallSize, _WallSize, Sprites.Water, false, true));
                                     break;
                                 case 'k':
                                     _kolobok = new KolobokView(posX, posY, _GOSize, _GOSize);
