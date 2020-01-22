@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controller;
@@ -16,18 +17,15 @@ namespace View
     public partial class ViewForm : Form
     {
         IController _controller;
-        IModelView _modelView;
+        static IModelView _modelView;
 
         ViewReport viewReport;
+        bool isOpen = false;
 
         public ViewForm(IController controller,IModelView modelView)
         {
             _controller = controller;
             _modelView = modelView;
-
-            viewReport = new ViewReport();
-
-            viewReport.Show();
 
             InitializeComponent();
         }
@@ -42,9 +40,6 @@ namespace View
             ScoreAmount.Text = $"SCORE: {_modelView.Score.ToString()}";
             BtnStart.Text = _modelView.GameOver ? "Start" : "Resstart";
 
-            // это дичайшая дичь
-            viewReport.DGVReport.DataSource = _modelView.GameObjects.Select(x => new { Name = x, Position = x.Position }).ToList();
-
             _controller.Update();
             Draw();
         }
@@ -52,6 +47,25 @@ namespace View
         private void BtnStart_Click(object sender, EventArgs e)
         {
             _controller.NewGame();
+            ActiveControl = null;
+        }
+
+        private void BtnReport_Click(object sender, EventArgs e)
+        {
+            if (!isOpen)
+            {
+                viewReport = new ViewReport();
+                viewReport.DGVReport.DataSource = _modelView.GameObjects;
+                viewReport.Show();
+                isOpen = !isOpen;
+            }
+            else
+            {
+                viewReport.Close();
+                isOpen = !isOpen;
+            }
+
+            this.Activate();
             ActiveControl = null;
         }
 

@@ -16,5 +16,10 @@ namespace View
         {
             InitializeComponent();
         }
+
+        private void timerViewReport_Tick(object sender, EventArgs e)
+        {
+            DGVReport.Refresh();
+        }
     }
 }

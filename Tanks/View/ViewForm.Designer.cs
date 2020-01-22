@@ -33,12 +33,13 @@
             this.picBoxField = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.ScoreAmount = new System.Windows.Forms.Label();
+            this.BtnReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxField)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnStart
             // 
-            this.BtnStart.Location = new System.Drawing.Point(12, 12);
+            this.BtnStart.Location = new System.Drawing.Point(41, 11);
             this.BtnStart.Name = "BtnStart";
             this.BtnStart.Size = new System.Drawing.Size(75, 23);
             this.BtnStart.TabIndex = 0;
@@ -65,17 +66,30 @@
             // 
             this.ScoreAmount.AutoSize = true;
             this.ScoreAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ScoreAmount.Location = new System.Drawing.Point(93, 12);
+            this.ScoreAmount.Location = new System.Drawing.Point(122, 11);
             this.ScoreAmount.Name = "ScoreAmount";
             this.ScoreAmount.Size = new System.Drawing.Size(21, 24);
             this.ScoreAmount.TabIndex = 2;
             this.ScoreAmount.Text = "0";
+            // 
+            // BtnReport
+            // 
+            this.BtnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnReport.Location = new System.Drawing.Point(12, 11);
+            this.BtnReport.Name = "BtnReport";
+            this.BtnReport.Size = new System.Drawing.Size(23, 23);
+            this.BtnReport.TabIndex = 3;
+            this.BtnReport.TabStop = false;
+            this.BtnReport.Text = "i";
+            this.BtnReport.UseVisualStyleBackColor = true;
+            this.BtnReport.Click += new System.EventHandler(this.BtnReport_Click);
             // 
             // ViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 692);
+            this.Controls.Add(this.BtnReport);
             this.Controls.Add(this.ScoreAmount);
             this.Controls.Add(this.picBoxField);
             this.Controls.Add(this.BtnStart);
@@ -84,6 +98,7 @@
             this.MaximizeBox = false;
             this.Name = "ViewForm";
             this.Text = "Tanks";
+            this.TopMost = true;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ViewForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxField)).EndInit();
             this.ResumeLayout(false);
@@ -97,6 +112,7 @@
         private System.Windows.Forms.PictureBox picBoxField;
         public System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label ScoreAmount;
+        private System.Windows.Forms.Button BtnReport;
     }
 }
 

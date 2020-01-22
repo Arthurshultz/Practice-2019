@@ -11,6 +11,10 @@ namespace Model.GameObjects
     {
         public Point Position;
 
+        public string Name { get => this.ToString(); }
+        public int PosX { get => Position.X; }
+        public int PosY { get => Position.Y; }
+
         public int SpriteWidth;
         public int SpriteHeight;
     

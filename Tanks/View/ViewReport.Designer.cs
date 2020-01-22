@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.DGVReport = new System.Windows.Forms.DataGridView();
+            this.timerViewReport = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DGVReport)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,6 +46,12 @@
             this.DGVReport.ReadOnly = true;
             this.DGVReport.Size = new System.Drawing.Size(624, 602);
             this.DGVReport.TabIndex = 0;
+            // 
+            // timerViewReport
+            // 
+            this.timerViewReport.Enabled = true;
+            this.timerViewReport.Interval = 200;
+            this.timerViewReport.Tick += new System.EventHandler(this.timerViewReport_Tick);
             // 
             // ViewReport
             // 
@@ -61,5 +69,6 @@
         #endregion
 
         internal System.Windows.Forms.DataGridView DGVReport;
+        private System.Windows.Forms.Timer timerViewReport;
     }
 }
