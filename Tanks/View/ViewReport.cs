@@ -12,7 +12,7 @@ namespace View
 
         private void timerViewReport_Tick(object sender, EventArgs e)
         {
-            DGVReport.Refresh();
+           //DGVReport.Refresh();
         }
     }
 }

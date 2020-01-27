@@ -59,6 +59,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 602);
             this.Controls.Add(this.DGVReport);
+            this.DoubleBuffered = true;
             this.Name = "ViewReport";
             this.Text = "ViewReport";
             ((System.ComponentModel.ISupportInitialize)(this.DGVReport)).EndInit();

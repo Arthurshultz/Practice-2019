@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace Model.ViewObjects
 {
-    class BrickWallView : GameObject
+    public class BrickWallView : GameObject
     {
         public bool IsDestroible;
         public bool IsMissesBullet;

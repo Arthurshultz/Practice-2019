@@ -8,8 +8,7 @@ namespace Model.GameObjects
         public int BulletHeight;
 
         public bool CanShoot = true;
-        private Timer _timer;
-
+        
         public Kolobok(int x, int y, int spriteWidth, int spriteHeight)
             : base(x, y, spriteWidth, spriteHeight)
         { }
@@ -62,23 +61,7 @@ namespace Model.GameObjects
                     break;
             }
 
-            SetTimer();
             return new KolobokBulletView(posX, posY, SpriteWidth, SpriteHeight, CurrentDirection);
-        }
-
-        private void SetTimer()
-        {
-            CanShoot = false;
-            _timer = new Timer(1000);
-            _timer.Elapsed += OnTimedEvent;
-            _timer.Enabled = true;
-        }
-
-        private void OnTimedEvent(object source, ElapsedEventArgs e)
-        {
-            CanShoot = true;
-            _timer.Stop();
-            _timer.Dispose();
         }
     }
 }

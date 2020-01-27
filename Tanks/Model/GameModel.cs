@@ -202,6 +202,15 @@ namespace Model
                 tb.Draw();
             }
 
+            if (_gameObjects.Any(kb => kb.GetType() == typeof(KolobokBulletView)))
+            {
+                _kolobok.CanShoot = false;
+            }
+            else
+            {
+                _kolobok.CanShoot = true;
+            }
+
             foreach (var kb in _gameObjects.OfType<KolobokBulletView>().ToArray())
             {
                 foreach (var w in _gameObjects.OfType<BrickWallView>().ToArray())

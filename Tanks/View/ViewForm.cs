@@ -1,8 +1,12 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Controller;
 using Model;
+using Model.GameObjects;
+using Model.ViewObjects;
 
 namespace View
 {
@@ -50,6 +54,13 @@ namespace View
 
             _controller.Update();
             Draw();
+
+            // если реже обновлять, то тормозов меньше
+            //if (viewReport != null)
+            //    viewReport.DGVReport.Refresh();
+ 
+            if (viewReport != null)
+                DgvUpdateManually();
         }
 
         private void BtnStart_Click(object sender, EventArgs e)
@@ -63,7 +74,21 @@ namespace View
             if (!isOpen)
             {
                 viewReport = new ViewReport();
-                viewReport.DGVReport.DataSource = _modelView.GameObjects;
+
+                // v1 все элементы
+                //viewReport.DGVReport.DataSource = _modelView.GameObjects;
+
+                // v2
+                // см. DgvUpdateManually()
+
+                // v3.1 исключая стены
+                //viewReport.DGVReport.DataSource = _modelView.GameObjects.Where(t => !(t is BrickWallView)).ToList();
+
+                /* v3.2 на биндинг листе, но он не обновляется автоматически, приходится рефрешить.
+                  возможно поможет реализация INotifyPropertyChanged у GameObject */
+                //viewReport.DGVReport.DataSource = new BindingList<GameObject>(
+                //    _modelView.GameObjects.Where(t => !(t is BrickWallView)).ToList());
+
                 viewReport.Show();
                 isOpen = !isOpen;
             }
@@ -77,7 +102,23 @@ namespace View
             ActiveControl = null;
         }
 
-        public void Draw()
+        private void DgvUpdateManually()
+        {
+            viewReport.DGVReport.ColumnCount = 3;
+            viewReport.DGVReport.ColumnHeadersVisible = true;
+            viewReport.DGVReport.Columns[0].Name = "Name";
+            viewReport.DGVReport.Columns[1].Name = "Position X";
+            viewReport.DGVReport.Columns[2].Name = "Position Y";
+
+            viewReport.DGVReport.Rows.Clear();
+
+            foreach (var o in _modelView.GameObjects.Where(t => !(t is BrickWallView)))
+            {
+                viewReport.DGVReport.Rows.Add(o, o.PosX.ToString(), o.PosY.ToString());
+            }
+        }
+
+        private void Draw()
         {
             Bitmap bm = new Bitmap(picBoxField.Width, picBoxField.Height);
             Graphics g = Graphics.FromImage(bm);
