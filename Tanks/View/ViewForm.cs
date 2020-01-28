@@ -16,7 +16,9 @@ namespace View
         static IModelView _modelView;
 
         ViewReport viewReport;
-        bool isOpen = false;
+        bool _isOpen = false;
+
+        bool _isPressed = false;
 
         int _formOffsetWidth = 40;
         int _formOffsetHeight = 90;
@@ -44,7 +46,16 @@ namespace View
 
         private void ViewForm_KeyDown(object sender, KeyEventArgs e)
         {
-            _controller.KeyDown(e.KeyCode);
+            if (!_isPressed)
+            {
+                _controller.KeyDown(e.KeyCode);
+                _isPressed = !_isPressed;
+            }
+        }
+
+        private void ViewForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            _isPressed = !_isPressed;
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -71,7 +82,7 @@ namespace View
 
         private void BtnReport_Click(object sender, EventArgs e)
         {
-            if (!isOpen)
+            if (!_isOpen)
             {
                 viewReport = new ViewReport();
 
@@ -85,17 +96,18 @@ namespace View
                 //viewReport.DGVReport.DataSource = _modelView.GameObjects.Where(t => !(t is BrickWallView)).ToList();
 
                 /* v3.2 на биндинг листе, но он не обновляется автоматически, приходится рефрешить.
-                  возможно поможет реализация INotifyPropertyChanged у GameObject */
+                  что бы избежать постоянного рефреша реализовал INotifyPropertyChanged у GameObject.
+                  Но эфекта это не дало, те же тормоза*/
                 //viewReport.DGVReport.DataSource = new BindingList<GameObject>(
                 //    _modelView.GameObjects.Where(t => !(t is BrickWallView)).ToList());
 
                 viewReport.Show();
-                isOpen = !isOpen;
+                _isOpen = !_isOpen;
             }
             else
             {
                 viewReport.Close();
-                isOpen = !isOpen;
+                _isOpen = !_isOpen;
             }
 
             this.Activate();

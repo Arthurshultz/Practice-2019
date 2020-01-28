@@ -100,6 +100,7 @@
             this.Text = "Tanks";
             this.TopMost = true;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ViewForm_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ViewForm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxField)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

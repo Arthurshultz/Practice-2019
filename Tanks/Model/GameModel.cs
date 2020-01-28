@@ -112,6 +112,11 @@ namespace Model
                     Direction = Direction.None;
                     _kolobok.PushOff();
                 }
+                else
+                {
+                    if (Direction != Direction.None)
+                        _kolobok.CurrentDirection = Direction;
+                }
             }
 
             foreach (var t in _gameObjects.OfType<TankView>().ToArray())
@@ -253,9 +258,9 @@ namespace Model
             top:
                 while (true)
                 {
-                    var t = new TankView(rnd.Next(_mapWidth - _WallSize), 
-                        rnd.Next(_mapHeight - _WallSize), 
-                        _GOSize, _GOSize, 
+                    var t = new TankView(rnd.Next(_mapWidth - _WallSize),
+                        rnd.Next(_mapHeight - _WallSize),
+                        _GOSize, _GOSize,
                         (Direction)rnd.Next(4));
 
                     if (ObjectCollision(t, _kolobok))

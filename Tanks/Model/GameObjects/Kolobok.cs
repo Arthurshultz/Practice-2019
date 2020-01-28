@@ -18,20 +18,20 @@ namespace Model.GameObjects
             switch (CurrentDirection)
             {
                 case Direction.Up:
-                    Position.Y += 1;
                     CurrentDirection = Direction.None;
+                    Position.Y += 1;
                     break;
                 case Direction.Right:
-                    Position.X -= 1;
                     CurrentDirection = Direction.None;
+                    Position.X -= 1;
                     break;
                 case Direction.Down:
-                    Position.Y -= 1;
                     CurrentDirection = Direction.None;
+                    Position.Y -= 1;
                     break;
                 case Direction.Left:
-                    Position.X += 1;
                     CurrentDirection = Direction.None;
+                    Position.X += 1;
                     break;
             }
         }
