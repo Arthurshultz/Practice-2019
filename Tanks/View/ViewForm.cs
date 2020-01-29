@@ -66,12 +66,8 @@ namespace View
             _controller.Update();
             Draw();
 
-            // если реже обновлять, то тормозов меньше
-            //if (viewReport != null)
-            //    viewReport.DGVReport.Refresh();
- 
             if (viewReport != null)
-                DgvUpdateManually();
+                viewReport.GOList = _modelView.GameObjects.Where(t => !(t is BrickWallView)).ToList();
         }
 
         private void BtnStart_Click(object sender, EventArgs e)
@@ -86,21 +82,6 @@ namespace View
             {
                 viewReport = new ViewReport();
 
-                // v1 все элементы
-                //viewReport.DGVReport.DataSource = _modelView.GameObjects;
-
-                // v2
-                // см. DgvUpdateManually()
-
-                // v3.1 исключая стены
-                //viewReport.DGVReport.DataSource = _modelView.GameObjects.Where(t => !(t is BrickWallView)).ToList();
-
-                /* v3.2 на биндинг листе, но он не обновляется автоматически, приходится рефрешить.
-                  что бы избежать постоянного рефреша реализовал INotifyPropertyChanged у GameObject.
-                  Но эфекта это не дало, те же тормоза*/
-                //viewReport.DGVReport.DataSource = new BindingList<GameObject>(
-                //    _modelView.GameObjects.Where(t => !(t is BrickWallView)).ToList());
-
                 viewReport.Show();
                 _isOpen = !_isOpen;
             }
@@ -112,22 +93,6 @@ namespace View
 
             this.Activate();
             ActiveControl = null;
-        }
-
-        private void DgvUpdateManually()
-        {
-            viewReport.DGVReport.ColumnCount = 3;
-            viewReport.DGVReport.ColumnHeadersVisible = true;
-            viewReport.DGVReport.Columns[0].Name = "Name";
-            viewReport.DGVReport.Columns[1].Name = "Position X";
-            viewReport.DGVReport.Columns[2].Name = "Position Y";
-
-            viewReport.DGVReport.Rows.Clear();
-
-            foreach (var o in _modelView.GameObjects.Where(t => !(t is BrickWallView)))
-            {
-                viewReport.DGVReport.Rows.Add(o, o.PosX.ToString(), o.PosY.ToString());
-            }
         }
 
         private void Draw()

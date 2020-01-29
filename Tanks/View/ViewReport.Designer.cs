@@ -50,7 +50,7 @@
             // timerViewReport
             // 
             this.timerViewReport.Enabled = true;
-            this.timerViewReport.Interval = 200;
+            this.timerViewReport.Interval = 500;
             this.timerViewReport.Tick += new System.EventHandler(this.timerViewReport_Tick);
             // 
             // ViewReport
@@ -62,6 +62,7 @@
             this.DoubleBuffered = true;
             this.Name = "ViewReport";
             this.Text = "ViewReport";
+            this.Load += new System.EventHandler(this.ViewReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVReport)).EndInit();
             this.ResumeLayout(false);
 

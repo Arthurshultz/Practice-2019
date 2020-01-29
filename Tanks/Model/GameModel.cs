@@ -109,12 +109,14 @@ namespace Model
             {
                 if (ObjectCollision(_kolobok, v))
                 {
+                    _kolobok.ShootDirection = Direction;
                     Direction = Direction.None;
                     _kolobok.PushOff();
                 }
                 else
                 {
                     if (Direction != Direction.None)
+                        _kolobok.ShootDirection = Direction;
                         _kolobok.CurrentDirection = Direction;
                 }
             }
@@ -207,15 +209,6 @@ namespace Model
                 tb.Draw();
             }
 
-            if (_gameObjects.Any(kb => kb.GetType() == typeof(KolobokBulletView)))
-            {
-                _kolobok.CanShoot = false;
-            }
-            else
-            {
-                _kolobok.CanShoot = true;
-            }
-
             foreach (var kb in _gameObjects.OfType<KolobokBulletView>().ToArray())
             {
                 foreach (var w in _gameObjects.OfType<BrickWallView>().ToArray())
@@ -229,8 +222,9 @@ namespace Model
                         {
                             _gameObjects.Remove(kb);
                             _gameObjects.Remove(w);
-                        }
-                        else if(!w.IsDestroible && !w.IsMissesBullet)
+                         }
+
+                        if (!w.IsDestroible && !w.IsMissesBullet)
                         {
                             _gameObjects.Remove(kb);
                         }

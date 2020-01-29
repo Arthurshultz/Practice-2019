@@ -7,6 +7,7 @@ namespace Model.GameObjects
         public int BulletWidth;
         public int BulletHeight;
 
+        public Direction ShootDirection;
         public bool CanShoot = true;
         
         public Kolobok(int x, int y, int spriteWidth, int spriteHeight)
@@ -41,7 +42,7 @@ namespace Model.GameObjects
             int posX = 0;
             int posY = 0;
 
-            switch (CurrentDirection)
+            switch (ShootDirection)
             {
                 case Direction.Up:
                     posX = Position.X + (SpriteWidth / 2) - (BulletWidth / 2);
@@ -61,7 +62,7 @@ namespace Model.GameObjects
                     break;
             }
 
-            return new KolobokBulletView(posX, posY, SpriteWidth, SpriteHeight, CurrentDirection);
+            return new KolobokBulletView(posX, posY, SpriteWidth, SpriteHeight, ShootDirection);
         }
     }
 }
