@@ -67,7 +67,7 @@ namespace View
             Draw();
 
             if (viewReport != null)
-                viewReport.GOList = _modelView.GameObjects.Where(t => !(t is BrickWallView)).ToList();
+                viewReport.GOList = new BindingList<GameObject>(_modelView.GameObjects.Where(t => !(t is BrickWallView)).ToList());
         }
 
         private void BtnStart_Click(object sender, EventArgs e)
